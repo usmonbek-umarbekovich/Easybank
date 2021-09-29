@@ -108,7 +108,10 @@ a {
 .nav-container .nav-items {
   display: flex;
   align-items: center;
-  gap: 2rem;
+}
+
+.nav-items .nav-item:not(:last-child) {
+  margin-right: 2rem;
 }
 
 .nav-items .nav-link {
@@ -166,7 +169,7 @@ a {
 }
 
 .showcase .showcase-moqups {
-  height: 49rem;  
+  height: 49rem;
   background: url('./images/image-mockups.png') no-repeat left 170px bottom -35px;
 }
 
@@ -179,10 +182,13 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2rem;
   width: 40%;
   margin: auto 0;
   z-index: 1;
+}
+
+.showcase-container .heading-detail {
+  margin: 2rem 0;
 }
 
 /* About Section */
@@ -196,12 +202,12 @@ a {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 2rem;
 }
 
 .about-container .title,
 .about-container .description {
   max-width: 650px;
+  margin-bottom: 2rem;
 }
 
 .about-container .features {
@@ -209,17 +215,20 @@ a {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 2rem;
 }
 
 .features .feature-item {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2rem;
+}
+
+.features .feature-item:not(:last-child) {
+  margin-right: 2rem;
 }
 
 .feature-item .feature-title {
+  margin: 2rem 0;
   color: var(--primary-blue);
   font-size: 1.5rem;
   font-weight: 400;
@@ -241,13 +250,12 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 3rem;
 }
 
 .article-container .article-cards {
+  margin-top: 3rem;
   display: flex;
   align-items: flex-start;
-  gap: 1.5rem;
 }
 
 .article-cards .card {
@@ -257,6 +265,10 @@ a {
   border-radius: 5px;
   transition: all 0.5s ease-in-out;
   border-radius: 5px;
+}
+
+.article-cards .card:not(:last-child) {
+  margin-right: 1.5rem;
 }
 
 .article-cards .card:hover {
@@ -276,7 +288,6 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
 }
 
 .card-content .card-author {
@@ -286,6 +297,7 @@ a {
 }
 
 .card-content .card-title {
+  margin: 1rem 0;
   font-size: 1.1rem;
   font-weight: 400;
   color: var(--primary-blue);
@@ -324,24 +336,27 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 3.5rem;
 }
 
 .contact-info .social {
+  margin-top: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
 }
 
-.social .social-item svg {
+.social .social-item:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.social-item svg {
   width: 20px;
   height: 20px;
   fill: #fff;
   transition: all 0.3s ease-in-out;
 }
 
-.social .social-item svg:hover {
+.social-item svg:hover {
   fill: var(--primary-green);
 }
 
@@ -349,17 +364,20 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
 }
 
-.footer-links .footer-link {
+.footer-links .footer-item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.footer-item .footer-link {
   color: var(--light-blue);
   font-size: 1rem;
   font-weight: 400;
   transition: all 0.3s ease-in-out;
 }
 
-.footer-links .footer-link:hover {
+.footer-item .footer-link:hover {
   color: var(--primary-green);
 }
 
@@ -368,10 +386,10 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 2rem;
 }
 
 .conclusion .copyright {
+  margin-top: 2rem;
   color: var(--grayish-blue);
   font-size: 1rem;
   font-weight: 400;
@@ -394,11 +412,21 @@ a {
   .article-container .article-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 2rem;
+  }
+
+  .article-container .article-cards {
+    grid-gap: 1.5rem;
   }
 
   .features .feature-item {
     align-items: center;
     text-align: center;
+  }
+
+  .article-cards .card:not(:last-child),
+  .features .feature-item:not(:last-child) {
+    margin-right: 0;
   }
 
   .footer-container .main-part {
@@ -425,21 +453,24 @@ a {
 
   .showcase .showcase-container {
     width: 100%;
-    gap: 0.7rem;
     margin-bottom: 1rem;
     align-items: center;
     text-align: center;
   }
 
+  .showcase-container .heading-detail {
+    margin: 0.7rem 0;
+  }
+
   #footer .footer-container {
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
   }
 
   .footer-container .main-part {
     flex: 1;
     width: 100%;
+    margin-bottom: 2rem;
   }
 
   .footer-container .conclusion {
@@ -466,7 +497,6 @@ a {
   .nav-container .nav-items {
     flex-direction: column;
     justify-content: space-evenly;
-    gap: 0;
     position: absolute;
     top: 6.5rem;
     left: 50%;
@@ -478,6 +508,10 @@ a {
     background: #fff;
     z-index: 2;
     transition: all 0.5s ease-in-out;
+  }
+
+  .nav-items .nav-item:not(:last-child) {
+    margin-right: 0;
   }
 
   .show-navbar {
@@ -510,7 +544,7 @@ a {
   .showcase .showcase-background {
     background: url('./images/bg-intro-mobile.svg') no-repeat center bottom /
       cover;
-    height: 24rem
+    height: 24rem;
   }
 
   .showcase .showcase-moqups {
@@ -528,21 +562,24 @@ a {
   .footer-container .main-part {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
   }
 
   .main-part .contact-info {
     align-items: center;
-    gap: 2rem;
     padding-bottom: 1rem;
+  }
+
+  .contact-info .social {
+    margin-top: 2rem;
   }
 
   .main-part .footer-links {
     align-items: center;
+    margin-top: 1rem;
   }
 }
 
-@media(max-width: 330px) {
+@media (max-width: 330px) {
   .l-heading {
     font-size: 2rem;
   }
